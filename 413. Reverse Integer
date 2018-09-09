@@ -1,0 +1,41 @@
+/**
+413. Reverse Integer
+Reverse digits of an integer. Returns 0 when the reversed integer overflows (signed 32-bit integer).
+
+Example
+Given x = 123, return 321
+Given x = -123, return -321
+*/
+
+
+
+public class Solution {
+    /**
+     * @param n: the integer to be reversed
+     * @return: the reversed integer
+     */
+    public int reverseInteger(int n) {
+        // write your code here
+        int reverseN = 0;
+        if (n == 0) {
+        	return reverseN = 0;
+        }
+        while (n != 0 ) {
+            int num = n % 10;
+            reverseN = reverseN * 10 + num;
+            if (isOverFlow(reverseN, n)) {
+            	reverseN = 0;
+            	break;
+            }
+            n = n / 10;
+        }
+		return reverseN;
+    }
+    
+    public boolean isOverFlow (int num1, int num2){
+        if (num1 % 10 != num2 % 10){
+            return true;
+        }
+        return false;
+    }
+}
