@@ -1,0 +1,58 @@
+/**
+ *
+  483. Convert Linked List to Array List
+  Convert a linked list to an array list.
+
+  Example
+  Given 1->2->3->null, return [1,2,3].
+ */
+
+
+/**
+ * Definition for ListNode
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+
+public class Solution {
+    /**
+     * @param head: the head of linked list.
+     * @return: An integer list
+     */
+    public List<Integer> toArrayList(ListNode head) {
+        // write your code here
+        ListNode current = head;
+        ArrayList<Integer> arrList = new ArrayList<Integer>();
+        if (head == null){
+            return null;
+        }
+        while(current != null){
+            arrList.add(current.val);
+            current=current.next;
+        }
+        return arrList;
+    }
+}
+
+//solution 2. provided by JiuZhang
+public class Solution {
+    /**
+     * @param head the head of linked list.
+     * @return an array list
+     */
+    public List<Integer> toArrayList(ListNode head) {  
+        // Write your code here
+        List<Integer> result = new ArrayList<Integer>();
+        while (head != null) {
+            result.add(head.val);
+            head = head.next;
+        }
+        return result;
+    }
+}
