@@ -1,0 +1,23 @@
+
+485. Generate ArrayList with Given Size
+Generate an arrayList with given size, initialize the array list with numbers from 1 to size.
+
+Example
+Given size = 4. return an array list that contains numbers from 1 to 4: [1,2,3,4]
+
+
+//solution 
+public class Solution {
+    /**
+     * @param size: An integer
+     * @return: An integer list
+     */
+    public List<Integer> generate(int size) {
+        // write your code here
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for (int i = 0; i < size; i++){
+            arr.add(i + 1);
+        }
+        return arr;
+    }
+}
