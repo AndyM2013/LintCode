@@ -20,6 +20,49 @@
  * }
  */
 
+/**
+ * Definition for ListNode
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+
+public class Solution {
+    /**
+     * @param head: The head of linked list.
+     * @param val: An integer.
+     * @return: The head of new linked list.
+     */
+    public ListNode insertNode(ListNode head, int val) {
+        // write your code here
+        // create a dummy and make it as head
+
+        ListNode node = new ListNode(val);
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        head = dummy;
+        
+        // let the head pointing to the last node which has lower val than the input value
+        while(head.next != null && head.next.val <= val){
+            head = head.next;
+        }
+        
+        // add the node in
+        node.next = head.next;
+        head.next = node;
+        
+        // return a linked list where the head is the dummy.next
+        return dummy.next;
+    }
+}
+
+
+//solution v2
 public class Solution {
     /**
      * @param head: The head of linked list.
