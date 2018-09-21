@@ -1,6 +1,14 @@
 /**
  *546. Implement Queue by Interface
   Implement queue by interface.
+  
+  Excemple:
+  push(1)
+  pop()     // return 1
+  push(2)
+  push(3)
+  top()     // return 2
+  pop()     // return 2
  */
 
 
