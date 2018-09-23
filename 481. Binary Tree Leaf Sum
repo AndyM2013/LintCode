@@ -1,0 +1,54 @@
+/**
+ * 481. Binary Tree Leaf Sum
+  Given a binary tree, calculate the sum of leaves.
+
+  Example
+  Given
+
+      1
+     / \
+    2   3
+   /
+  4
+  return 7.
+ */
+
+
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+
+public class Solution {
+    /**
+     * @param root: the root of the binary tree
+     * @return: An integer
+     */
+    private int sum;
+    public int leafSum(TreeNode root) {
+        // write your code here
+        sum = 0;
+        traverseTreePreOrder(root);
+        return sum;
+    }
+    
+    private void traverseTreePreOrder(TreeNode root){
+        if (root == null){
+            return;
+        }
+        
+        if (root.left == null && root.right == null){
+            sum += root.val;
+        }
+        
+        traverseTreePreOrder(root.left);
+        traverseTreePreOrder(root.right);
+    }
+}
