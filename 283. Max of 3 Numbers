@@ -1,0 +1,50 @@
+/**
+ * 283. Max of 3 Numbers
+  Given 3 integers, return the max of them.
+
+  Example
+  Given num1 = 1, num2 = 9, num3 = 0, return 9.
+ */
+ 
+ solution v1
+ public class Solution {
+    /**
+     * @param num1: An integer
+     * @param num2: An integer
+     * @param num3: An integer
+     * @return: an interger
+     */
+    public void run(){
+        int num1 = 1;
+        int num2 = 9;
+        int num3 = 0;
+        System.out.println(maxOfThreeNumbers(num1, num2, num3));
+    }
+    public int maxOfThreeNumbers(int num1, int num2, int num3) {
+        int[] array = {num1, num2, num3};
+        Arrays.sort(array);
+        int max = array[(array.length) - 1];
+        return max;
+    }
+}
+
+solution v2
+public class Solution {
+    public int maxOfThreeNumbers(int a, int b, int c) {
+        if (a >= b && a >= c) {
+            return a;
+        } else if (b >= a && b >= c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
+}
+
+solution v3
+public class Solution {
+    public int maxOfThreeNumbers(int num1, int num2, int num3) {
+        int max = Math.max(num1, num2);
+        return max = Math.max(max, num3);
+    }
+}
