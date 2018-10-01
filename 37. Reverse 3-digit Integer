@@ -1,16 +1,17 @@
-/*
- *37. Reverse 3-digit Integer
+/**
+ * 37. Reverse 3-digit Integer
   Reverse a 3-digit integer.
-  
+
   Example
   Reverse 123 you will get 321.
   Reverse 900 you will get 9.
-
+  
   Notice
   You may assume the given number is larger or equal to 100 but smaller than 1000.
-  */
-
-public class Solution {
+ */
+ 
+ solution v1
+ public class Solution {
     /*
      * @param number: A 3-digit number.
      * @return: Reversed number.
@@ -21,5 +22,18 @@ public class Solution {
         int num2 = (number / 10) % 10;
         int num3 = ((number / 10) / 10) % 10;
         return num3 + num2 * 10 + num1 * 100;
+    }
+}
+
+solution v2
+public class Solution {
+    public int reverseInteger(int number) {
+        int reverseInteger = 0;
+        while (number > 0){
+            int digit = number % 10;
+            reverseInteger = reverseInteger * 10 + digit;
+            number = number / 10;
+        }
+        return reverseInteger;
     }
 }
