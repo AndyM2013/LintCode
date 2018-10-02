@@ -1,0 +1,62 @@
+/**
+ * 478. Simple Calculator
+  Given two integers a and b, an operator, choices:
+  +, -, *, /
+  Calculate a <operator> b.
+
+  Example
+  For a = 1, b = 2, operator = +, return 3.
+  For a = 10, b = 20, operator = *, return 200.
+  For a = 3, b = 2, operator = /, return 1. (not 1.5)
+  For a = 10, b = 11, operator = -, return -1.
+
+  Notice
+  Use switch grammar to solve it
+ */
+ 
+ solution v1
+ public class Calculator {
+    /**
+     * @param a: An integer
+     * @param operator: A character, +, -, *, /.
+     * @param b: An integer
+     * @return: The result
+     */
+    public int calculate(int a, char operator, int b) {
+        // write your code here
+        switch (operator){
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b;
+        }
+        return 0;
+    }
+}
+ 
+ solution v2
+ public class Calculator {
+    public void run(){
+        int a = 1;
+        int b = 2;
+        char ch1 = '+';
+        int result = calculate(a, ch1, b);
+        System.out.println(result);
+    }
+    public int calculate(int a, char operator, int b) {
+        int cal = 0;
+        ArrayList <Character> ch = new ArrayList<Character>();
+        ch.add('+');
+        ch.add('-');
+        ch.add('*');
+        ch.add('/');
+        int i = ch.indexOf(operator) + 1;
+        switch (i){
+            case 1: return cal = a + b; 	
+            case 2: return cal = a - b; 
+            case 3: return cal = a * b; 
+            case 4: return cal = a / b; 
+        }
+		return cal;
+    }
+}
