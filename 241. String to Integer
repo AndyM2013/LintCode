@@ -1,0 +1,17 @@
+241. String to Integer
+Given a string, convert it to an integer. 
+You may assume the string is a valid integer number that can be presented by a signed 32bit integer (-231 ~ 231-1).
+
+Example
+Given "123", return 123.
+
+public class Solution {
+    /**
+     * @param str: A string
+     * @return: An integer
+     */
+    public int stringToInteger(String str) {
+        // write your code here
+        return Integer.valueOf(str);
+    }
+}
