@@ -1,0 +1,51 @@
+146. Lowercase to Uppercase II
+Implement an upper method to convert all characters in a string to uppercase.
+
+You should ignore the characters not in alphabet.
+
+Example
+Given "abc", return "ABC".
+
+Given "aBc", return "ABC".
+
+Given "abC12", return "ABC12".
+
+public class Solution {
+    /**
+     * @param str: A string
+     * @return: A string
+     */
+    public String lowercaseToUppercase2(String str) {
+        // write your code here
+        String newStr = "";
+        for (int i = 0; i < str.length(); i++){
+            char ch = str.charAt(i);
+            if (Character.isLetter(ch)){
+                newStr += Character.toUpperCase(ch);
+            } else {
+                newStr += ch;
+            }
+        }
+        return newStr;
+    }
+}
+
+
+solution #2
+public class Solution {
+    /**
+     * @param str a string
+     * @return a string
+     */
+    public String lowercaseToUppercase2(String str) {
+        // Write your code here
+        StringBuilder sb = new StringBuilder(str);
+        for (int index = 0; index < sb.length(); index++) {
+            char c = sb.charAt(index);
+            if (Character.isLowerCase(c)) {
+                sb.setCharAt(index, Character.toUpperCase(c));
+            }
+        }
+        return sb.toString();
+    }
+}
