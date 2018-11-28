@@ -1,16 +1,21 @@
-// 93. Balanced Binary Tree
-// Given a binary tree, determine if it is height-balanced.
-
-// For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+// 85. Insert Node in a Binary Search Tree
+// Given a binary search tree and a new tree node, insert the node into the tree. You should keep the tree still be a valid binary search tree.
 
 // Example
-// Given binary tree A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
+// Given binary search tree as follow, after Insert node 6, the tree should be:
 
-// A)  3            B)    3 
-//   / \                  \
-//   9  20                 20
-//     /  \                / \
-//   15   7              15  7
+//   2             2
+// / \           / \
+// 1   4   -->   1   4
+//   /             / \ 
+//   3             3   6
+// Challenge
+// Can you do it without recursion?
+
+// Notice
+// You can assume there is no duplicate values in this tree + node.
+
+
    
 /**
  * Definition of TreeNode:
